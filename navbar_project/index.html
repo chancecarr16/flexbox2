@@ -4,81 +4,132 @@
 <head>
     <meta charset="utf-8" />
     <title>Navbar project</title>
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="main.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
 
     <style>
         body {
-            font-family: 'Lato', sans-serif;
+            margin: 0px;
         }
 
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        html {
+            font-family: 'Oxygen', sans-serif;
         }
 
-        .nav {
-            background-color: rgba(44, 44, 163, 0.623);
-            display: flex;
-            justify-content: space-around;
-            height: calc(10vh - 40px);
-            align-items: center;
-            width: auto;
-            position: sticky;
-            top: 0;
+        .navbar {
+            background: #415068;
         }
 
-        .nav_item {
-            background-color:blue;
+        .navbar div {
+            display: none;
+        }
+
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #223047;
             color: white;
-            width: 100px;
-            height: 42px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .nav_item:hover {
-            background-color: white;
-            color: blue;
-            cursor: pointer;
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: #223047;
+            background: white;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+
+        .navbar a {
+            text-decoration: none;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+
+            .navbar div {
+                display: flex;
+            }
+
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .navbar .link {
+                width: auto;
+            }
+
+            .navbar .right {
+                justify-content: flex-end;
+            }
+
+            .navbar .toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: #223047;
+                color: white;
+            }
+
+            .navbar .brand {
+                text-align: left;
+            }
+
+            .navbar.active div {
+                display: block;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
-      <h1>My Page</h1>
-    </div>
+    <div class="navbar">
+        <a href="#" class="toggle" id="navHamburger">
+           <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="brand">MyName</a>
 
-    <div class="nav">
-        <div class="nav_item">
-            <div class="nav_text">
-                Home
-            </div>
+        <div class="left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
         </div>
-        <div class="nav_item">
-            <div class="nav_text">
-                Contact Me
-            </div>
-        </div>
-        <div class="nav_item">
-            <div class="nav_text">
-                    Info
-            </div>
+
+        <div class="right">
+                <a href="#" class="link">Link 3</a>
         </div>
     </div>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non varius leo. Duis consectetur ullamcorper massa ut fringilla. Cras dictum rhoncus mi faucibus mollis. Donec tempor, risus id congue hendrerit, dolor felis venenatis enim, pellentesque malesuada nunc libero quis dui. Quisque justo sapien, finibus quis nisi at, sagittis placerat quam. Phasellus nec ullamcorper ipsum. Nunc dui nisl, lobortis sed velit eget, luctus vehicula erat. Proin non rhoncus lacus, ac facilisis neque. Integer sapien diam, sagittis sit amet scelerisque id, vehicula vitae neque. Pellentesque purus ipsum, porttitor nec egestas at, viverra ac dui. </p>
-
-    <p> Proin aliquam metus mi, et accumsan ante finibus ut. Proin et turpis eu tortor pharetra fringilla. Nulla vulputate odio ornare nulla lacinia tristique. Fusce porta lacinia lorem, eu facilisis purus hendrerit vitae. In hac habitasse platea dictumst. Sed lobortis orci id velit commodo, id scelerisque lectus gravida. Sed tempor mi id ligula egestas vehicula. </p>
-            
-    <p> Vestibulum convallis laoreet volutpat. Nullam luctus congue est, eu dapibus ante pellentesque eget. Quisque non sem finibus, ultrices turpis sed, tempor eros. Phasellus aliquet tempor sodales. Vestibulum auctor sem nec commodo efficitur. Ut ultrices sapien ut mattis scelerisque. Nunc lobortis, massa ut imperdiet mollis, leo dolor hendrerit mauris, sit amet convallis eros sem non turpis. Maecenas fermentum eget ipsum a tempor. Etiam sed imperdiet massa. Morbi vestibulum quam eget luctus commodo. Sed ut ipsum tincidunt, commodo arcu vel, commodo enim. Morbi quis felis neque. Donec et dui ligula. Vestibulum convallis quam justo, at venenatis magna tristique sollicitudin. Duis pretium ultrices purus, sed sollicitudin augue egestas hendrerit. Sed vitae tortor vel nibh euismod feugiat. </p>
-            
-    <p> Aenean quis tincidunt mauris, sit amet laoreet risus. Pellentesque lorem ex, auctor et dictum sed, facilisis ac turpis. Morbi mi diam, mattis in diam ut, suscipit mollis felis. Fusce finibus neque eu lectus ultricies accumsan pellentesque sit amet arcu. Curabitur rhoncus tortor vitae tellus sollicitudin aliquet. Vivamus ornare vulputate lectus, eget egestas urna pellentesque at. Sed rhoncus id dui quis fringilla. Cras sollicitudin condimentum tellus in tincidunt. Integer dictum mi non turpis porta, vel fermentum nisi accumsan. </p>
-
 </body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentElement.classList.toggle('active');
+    })
+</script>
 
 </html>
